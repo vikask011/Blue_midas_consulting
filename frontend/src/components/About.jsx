@@ -39,7 +39,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/src/assets/1.jpg"
+                src="assets\1.jpg"
                 alt="Sanjeev Kumar"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-gray-100 shadow-md"
               />
@@ -66,7 +66,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/src/assets/team-2.webp"
+                src="/assets/team-2.webp"
                 alt="Manas Agrawal"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-gray-100 shadow-md"
               />
