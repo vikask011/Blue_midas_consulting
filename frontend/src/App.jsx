@@ -7,6 +7,10 @@ import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import Services from './components/Services';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
+import CookiePreferences from './components/CookiePreferences';
+import CookiePolicy from './components/CookiePolicy';
+import { ConsentProvider } from './context/ConsentContext';
 import About from './components/About';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
@@ -30,9 +34,10 @@ import OtherEngagementModels from './pages/OtherEngagementModels';
 function App() {
   return (
     <Router>
-      <div className="App">
-        {/* Navbar */}
-        <Navbar />
+      <ConsentProvider>
+        <div className="App">
+          {/* Navbar */}
+          <Navbar />
 
         {/* Routes */}
         <Routes>
@@ -65,16 +70,21 @@ function App() {
 
           {/* Privacy Policy & Terms */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
 
           {/* Optional: Catch all route for 404 */}
           <Route path="*" element={<div className="text-center py-20 text-2xl">Page Not Found</div>} />
         </Routes>
 
-        {/* Footer */}
-        <Footer />
-        <ReferUsButton />
-      </div>
+        {/* Cookie UI */}
+        <CookieBanner />
+        <CookiePreferences />
+
+          {/* Footer */}
+          <Footer />
+          <ReferUsButton />
+        </div>
+      </ConsentProvider>
     </Router>
   );
 }

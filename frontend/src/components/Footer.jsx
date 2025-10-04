@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLinkedin, FaFacebook, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Footer = () => {
   const quickLinks = [
@@ -8,15 +9,31 @@ const Footer = () => {
     { name: 'Refer Us', path: '/refer' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Cookie Policy', path: '/cookie-policy' },
   ];
 
   const currentYear = new Date().getFullYear();
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!captchaValue) {
+      alert("Please verify that you're not a robot!");
+      return;
+    }
+    // Submit email logic here
+    alert('Subscribed successfully!');
+  };
 
   return (
     <footer className="bg-gray-50 text-gray-700 py-12 shadow-inner border-t border-gray-100">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          
+
           {/* Company Info */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Blue Midas Consulting</h2>
@@ -24,13 +41,29 @@ const Footer = () => {
               We transform ambitious visions into reality through strategic consulting and innovative solutions.
             </p>
             <div className="flex space-x-5 text-gray-500">
-              <a href="#" aria-label="LinkedIn" className="hover:text-gray-900 transition-colors">
+              <a
+                href="https://www.linkedin.com/company/blue-midas-consulting/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="hover:text-gray-900 transition-colors"
+              >
                 <FaLinkedin className="h-6 w-6" />
               </a>
-              <a href="#" aria-label="Facebook" className="hover:text-gray-900 transition-colors">
+              <a
+                href="https://www.facebook.com/people/Blue-Midas-Consulting/61565770170202/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="hover:text-gray-900 transition-colors"
+              >
                 <FaFacebook className="h-6 w-6" />
               </a>
-              <a href="mailto:info@bluemidasconsulting.com" aria-label="Email" className="hover:text-gray-900 transition-colors">
+              <a
+                href="mailto:info@bluemidasconsulting.com"
+                aria-label="Email"
+                className="hover:text-gray-900 transition-colors"
+              >
                 <FaEnvelope className="h-6 w-6" />
               </a>
             </div>
@@ -47,6 +80,15 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.openCookiePreferences?.()}
+                  className="hover:text-gray-900 transition-colors underline"
+                >
+                  Cookie Settings
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -86,13 +128,21 @@ const Footer = () => {
             <p className="text-base text-gray-600 mb-4">
               Get the latest insights and company news straight to your inbox.
             </p>
-            <form className="flex flex-col gap-3">
+            <form className="flex flex-col gap-3" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder="Enter your email"
+                required
                 className="w-full px-4 py-2.5 rounded-md border border-gray-300 text-base text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800"
               />
-              <button 
+
+              {/* reCAPTCHA */}
+              <ReCAPTCHA
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={handleCaptchaChange}
+              />
+
+              <button
                 type="submit"
                 className="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2.5 rounded-md text-base font-medium transition"
               >

@@ -23,8 +23,6 @@ const About = () => {
           </p>
         </motion.div>
         
-        {/* --- */}
-
         {/* Row 1: Founders */}
         <div>
           <h3 className="text-4xl font-bold text-gray-800 mb-12 text-center">
@@ -41,7 +39,6 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                // Placeholder image for development
                 src="/src/assets/1.jpg"
                 alt="Sanjeev Kumar"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-gray-100 shadow-md"
@@ -53,7 +50,7 @@ const About = () => {
                 CEO & Founder
               </p>
               <p className="text-gray-700 text-base leading-relaxed text-justify md:text-center">
-                Over **30 years of experience** in technical, supply chain, and
+                Over <strong>30 years of experience</strong> in technical, supply chain, and
                 leadership roles in Aeronautical and Defense sectors. Led multiple
                 successful projects ensuring operational excellence and strategic
                 execution across large organizations.
@@ -69,7 +66,6 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                // Placeholder image for development
                 src="/src/assets/team-2.webp"
                 alt="Manas Agrawal"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-gray-100 shadow-md"
@@ -81,65 +77,52 @@ const About = () => {
                 Chief Business Consultant
               </p>
               <p className="text-gray-700 text-base leading-relaxed text-justify md:text-center">
-                MBA from ISB Hyderabad with deep expertise in **Strategy, Operations,
-                and Data Analytics** across Automotive, IT, Fintech, and B2B SaaS
+                MBA from ISB Hyderabad with deep expertise in <strong>Strategy, Operations,
+                and Data Analytics</strong> across Automotive, IT, Fintech, and B2B SaaS
                 sectors. Passionate about driving measurable, scalable business growth.
               </p>
             </motion.div>
           </div>
         </div>
         
-        {/* --- */}
-
-        {/* Row 2: Vision & Mission */}
+        {/* Row 2: Vision & Mission as consulting-level cards */}
         <div>
           <h3 className="text-4xl font-bold text-gray-800 mb-12 text-center">
             Our Purpose
           </h3>
           <div className="grid md:grid-cols-2 gap-12">
-            
+
             {/* Vision */}
             <motion.div
-              className="p-10 bg-white rounded-2xl shadow-xl flex flex-col items-center text-center border-t-4 border-gray-300"
+              className="p-10 bg-white rounded-2xl shadow-xl flex flex-col items-start border-l-4 border-[#414294]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img
-                src="https://images.pexels.com/photos/8937437/pexels-photo-8937437.jpeg"
-                alt="Vision"
-                className="w-full h-56 object-cover mb-6 rounded-lg shadow-sm"
-              />
-              <h4 className="text-3xl font-bold mb-4 text-gray-900">Our Vision 🔭</h4>
+              <h4 className="text-3xl font-bold mb-4 text-gray-900">Our Vision </h4>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To be the **trusted partner** for MSMEs across diverse sectors,
-                enabling sustainable growth and innovation through expert
-                consulting in strategy, operations, and execution.
+                To be the <strong>trusted consulting partner</strong> for MSMEs, enabling sustainable growth
+                and innovation through strategic, operational, and data-driven solutions.
               </p>
             </motion.div>
 
             {/* Mission */}
             <motion.div
-              className="p-10 bg-white rounded-2xl shadow-xl flex flex-col items-center text-center border-t-4 border-gray-300"
+              className="p-10 bg-white rounded-2xl shadow-xl flex flex-col items-start border-l-4 border-[#414294]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <img
-                src="https://images.pexels.com/photos/8866736/pexels-photo-8866736.jpeg"
-                alt="Mission"
-                className="w-full h-56 object-cover mb-6 rounded-lg shadow-sm"
-              />
-              <h4 className="text-3xl font-bold mb-4 text-gray-900">Our Mission 🎯</h4>
+              <h4 className="text-3xl font-bold mb-4 text-gray-900">Our Mission </h4>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Deliver tailored solutions to MSMEs, helping them overcome
-                challenges in supply chain, operations, and strategy, while
-                driving measurable improvements in performance and competitiveness
-                with **data-backed precision**.
+                Deliver tailored consulting solutions to MSMEs, helping them overcome operational
+                and strategic challenges while driving measurable performance improvements
+                with data-backed precision.
               </p>
             </motion.div>
+
           </div>
         </div>
       </section>

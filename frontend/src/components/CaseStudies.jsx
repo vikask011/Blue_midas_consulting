@@ -23,7 +23,7 @@ const caseStudies = [
   {
     title: "Omni-channel Customer Service",
     description: "Explore the transformative impact of integrated omni-channel support systems and their proven benefits in consistently enhancing customer experiences and building lasting loyalty.",
-    image: "https://images.pexels.com/photos/4392278/pexels-photo-4392278.jpeg", // Example image
+    image: "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg", // Example image
     file: "/case_studies/Omnichannel Ticketing System.pdf",
   },
   {
@@ -70,7 +70,7 @@ const CaseStudies = () => {
       {/* Page Header */}
       <div className="text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-          Our Knowledge Repository 📚
+          Our Case Studies
         </h1>
         <p className="text-xl text-gray-700 max-w-4xl mx-auto font-light">
           Dive into our comprehensive collection of consulting case studies. We offer deep insights into market dynamics, strategic financial planning, cutting-edge supply chain optimization, and innovative operational improvements to empower your business.
@@ -78,11 +78,11 @@ const CaseStudies = () => {
       </div>
 
       {/* Case Study Cards Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {caseStudies.map((study, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col overflow-hidden"
+            className="bg-white rounded-2xl shadow-xl ring-1 ring-blue-100 hover:ring-blue-300 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col overflow-hidden"
           >
             {/* Image Section */}
             <div className="relative h-52 overflow-hidden">
