@@ -246,7 +246,7 @@ const Services = () => {
       {/* --------------------------- */}
 
       {/* Bottom Section */}
-      <section className="bg-blue-700 text-white py-16 md:py-20 px-4 sm:px-6"> 
+      <section className="bg-blue-900 text-white py-16 md:py-20 px-4 sm:px-6"> 
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
