@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const DataAnalytics = () => {
   const containerVariants = {
@@ -154,12 +155,12 @@ const DataAnalytics = () => {
           <p className="text-xl text-gray-700 mb-8">
             Schedule a strategic session with our lead data consultant to map your path to <strong>data maturity</strong>.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-10 py-4 text-xl font-bold text-white bg-[#757efa] rounded-full shadow-lg hover:bg-[#414294] transition duration-300 transform hover:scale-105"
           >
             Start Your Data Strategy →
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>
