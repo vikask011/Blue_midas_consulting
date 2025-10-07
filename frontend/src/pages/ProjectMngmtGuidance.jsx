@@ -1,6 +1,7 @@
 // ProjectManagementGuidance.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const ProjectManagementGuidance = () => {
   const containerVariants = {
@@ -128,12 +129,12 @@ const ProjectManagementGuidance = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold mb-4">Deliver Projects On-Time and On-Budget</h2>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-10 py-4 text-xl font-bold text-white bg-[#757efa] rounded-full shadow-lg hover:bg-[#414294] transition duration-300 transform hover:scale-105"
           >
             Speak with PMO Experts →
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

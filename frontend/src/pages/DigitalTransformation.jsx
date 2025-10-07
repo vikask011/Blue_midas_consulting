@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const DigitalTransformation = () => {
   const listVariants = {
@@ -185,12 +186,12 @@ const DigitalTransformation = () => {
           <p className="text-xl text-gray-700 mb-8">
             Engage our consultants today to quantify the impact of a strategic digital roadmap tailored to your specific market demands.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-12 py-4 text-xl font-bold text-white bg-[#757efa] rounded-full shadow-lg hover:bg-[#414294] transition duration-300 transform hover:scale-105"
           >
             Request a Digital Strategy Briefing →
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>
