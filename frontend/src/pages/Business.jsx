@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 const steps = [
   {
     number: 1,
@@ -92,22 +91,30 @@ export default function Business() {
           </p>
         </motion.div>
 
-        {/* Steps grid: left = flexible card, right = fixed timeline column (18rem) */}
-        <div className="relative grid grid-cols-1 md:grid-cols-[1fr_18rem] gap-y-8 md:gap-x-10">
-          {/* Vertical connector inside the right column (positions itself relative to the container) */}
+        {/* Steps grid */}
+        <div className="relative grid grid-cols-1 md:grid-cols-[5rem_1fr] gap-y-8 md:gap-x-10">
+          {/* Vertical line */}
           <div
-            className="hidden md:block absolute top-0 h-full w-[2px] rounded"
-            style={{
-              left: "calc(100% - 18rem + 2rem)", // positions line inside right column at 2rem from its left edge
-              background:
-                "linear-gradient(to bottom, rgb(37 99 235), rgba(96,165,250,0.25))",
-            }}
+            className="hidden md:block absolute top-0 bottom-0 left-10 w-1 bg-gray-300 rounded"
           />
 
-          {/* For each step, emit the left card then the right timeline cell (so they occupy the same grid row) */}
           {steps.map((step, i) => (
             <React.Fragment key={step.number}>
-              {/* Left: detail card */}
+              {/* Left: number circle */}
+              <motion.div
+                {...markAnim(i)}
+                className="hidden md:flex flex-col items-center relative z-10"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.25 }}
+                  className="h-14 w-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-400 text-white text-lg font-bold shadow-lg"
+                >
+                  {step.number}
+                </motion.div>
+              </motion.div>
+
+              {/* Right: step content */}
               <motion.div
                 {...cardAnim(i)}
                 className="bg-white p-6 md:p-7 rounded-xl shadow-sm hover:shadow-md transition"
@@ -119,43 +126,23 @@ export default function Business() {
                   {step.description}
                 </p>
               </motion.div>
-
-              {/* Right: timeline marker + short title (hidden on small screens) */}
-              <motion.div
-                {...markAnim(i)}
-                className="hidden md:flex items-center gap-4 py-6" // py to match card height/padding visually
-              >
-                <motion.div
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.25 }}
-                  className="h-14 w-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-400 text-white text-lg font-bold shadow-lg"
-                >
-                  {step.number}
-                </motion.div>
-
-                <div>
-                  <div className="text-gray-900 font-medium text-lg">
-                    {step.title}
-                  </div>
-                </div>
-              </motion.div>
             </React.Fragment>
           ))}
         </div>
 
         {/* Closing statement */}
         <motion.div
-  initial={{ opacity: 0, y: 28 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="mt-12 text-center bg-blue-100 text-gray-900 rounded-2xl p-10 shadow-md border-l-4 border-blue-600"
->
-  <p className="text-xl md:text-2xl font-semibold leading-relaxed max-w-4xl mx-auto">
-    Transparent, data-driven, and results-focused — this methodology is tailored
-    to transform strategy into sustainable business outcomes.
-  </p>
-</motion.div>
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 text-center bg-blue-100 text-gray-900 rounded-2xl p-10 shadow-md border-l-4 border-blue-600"
+        >
+          <p className="text-xl md:text-2xl font-semibold leading-relaxed max-w-4xl mx-auto">
+            Transparent, data-driven, and results-focused — this methodology is
+            tailored to transform strategy into sustainable business outcomes.
+          </p>
+        </motion.div>
       </div>
     </div>
   );

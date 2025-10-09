@@ -1,4 +1,3 @@
-// ProjectManagementGuidance.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -16,7 +15,7 @@ const ProjectManagementGuidance = () => {
   const subSegments = [
     "Project Financial Feasibility Assessment",
     "Project Planning & Scheduling",
-    "Process Governance & PMO setup",
+    "Process Governance & PMO Setup",
     "Risk Management",
     "Resource Planning & Allocation",
     "Project Monitoring & Control",
@@ -29,15 +28,12 @@ const ProjectManagementGuidance = () => {
   const consolidatedPoint = {
     title: "Comprehensive Project Management Support",
     description:
-      "We provide end-to-end project management guidance to ensure projects are delivered on-time, within budget, and meet quality standards by combining planning, execution, risk mitigation, monitoring, and stakeholder communication.",
-      
-
+      "End-to-end project management guidance to ensure projects are delivered on-time, within budget, and meet quality standards by combining planning, execution, risk mitigation, monitoring, and stakeholder communication.",
   };
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans text-gray-900">
       <div className="container mx-auto px-6 py-20 lg:py-28 space-y-20">
-
         {/* Page Header */}
         <motion.div
           className="text-center"
@@ -55,8 +51,7 @@ const ProjectManagementGuidance = () => {
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-
-          {/* Left: 10 Points */}
+          {/* Left Column: Sub-Segments */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -73,15 +68,15 @@ const ProjectManagementGuidance = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="grid md:grid-cols-1 gap-6"
+              className="space-y-6"
             >
               {subSegments.map((point, i) => (
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="flex items-start space-x-3 bg-white rounded-xl shadow-2xl p-4 hover:bg-blue-50 transition duration-300"
+                  className="flex items-start space-x-3 bg-white rounded-xl shadow-lg p-4 border-t-4 border-[#414294] relative overflow-hidden group hover:bg-blue-50 transition duration-300"
                 >
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#414294] text-white flex items-center justify-center text-sm font-bold">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#414294] text-white flex items-center justify-center text-sm font-bold mt-1">
                     {i + 1}
                   </div>
                   <p className="text-gray-700 text-lg">{point}</p>
@@ -90,19 +85,19 @@ const ProjectManagementGuidance = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right: Image + Consolidated Point */}
+          {/* Right Column: Image + Consolidated Point */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col space-y-8"
+            className="space-y-10"
           >
             {/* Image */}
             <div className="flex justify-center relative">
               <img
                 src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1920&auto=format&fit=crop"
-                alt="Project management guidance workshop with planning board"
+                alt="Project management guidance workshop"
                 loading="lazy"
                 className="rounded-2xl shadow-2xl w-full object-cover transform hover:scale-105 transition duration-500"
               />
@@ -112,9 +107,9 @@ const ProjectManagementGuidance = () => {
             {/* Consolidated Point */}
             <motion.div
               variants={itemVariants}
-              className="bg-white p-6 rounded-xl shadow-2xl border-t-4 border-[#414294]"
+              className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#414294] relative overflow-hidden group hover:bg-blue-50 transition duration-300"
             >
-              <h3 className="text-2xl font-semibold mb-4">{consolidatedPoint.title}</h3>
+              <h3 className="text-2xl font-semibold mb-2">{consolidatedPoint.title}</h3>
               <p className="text-gray-700 text-lg leading-relaxed">{consolidatedPoint.description}</p>
             </motion.div>
           </motion.div>
