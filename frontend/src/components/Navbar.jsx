@@ -29,9 +29,10 @@ const Navbar = () => {
               alt="Blue Midas Consulting Logo"
               className="h-14 w-14 object-contain rounded-full"
             />
-            <h1 className="ml-4 text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide">
-              BLUE MIDAS CONSULTING
-            </h1>
+            <h1 className="ml-4 text-base sm:text-lg md:text-3xl font-extrabold text-blue-700 tracking-wide whitespace-nowrap">
+  BLUE MIDAS CONSULTING
+</h1>
+
           </div>
 
           {/* Contact + Socials */}
