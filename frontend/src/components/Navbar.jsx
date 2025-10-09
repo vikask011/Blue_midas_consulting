@@ -271,7 +271,16 @@ const Navbar = () => {
       </header>
 
       {/* Spacer */}
-      <div style={{ height: navHeight }}></div>
+      {/* Spacer */}
+<div
+  className="block md:hidden"
+  style={{ height: navHeight * 0.6 }} // smaller height on mobile
+></div>
+<div
+  className="hidden md:block"
+  style={{ height: navHeight }} // full height on desktop
+></div>
+
 
       {/* Tailwind Animation for dropdown fade-in */}
       <style>
